@@ -20,7 +20,8 @@ Automatically back up your project folder every day instead of typing the copy c
   ```bash
   nano backup.sh
   ```
-  Add this content:
+  - Opens the nano text editor to write your script.
+- **Add this content:**
   ```bash
   #!/bin/bash
   cp -r ~/projects/myapp ~/backups/myapp-$(date +%Y%m%d)
@@ -29,16 +30,24 @@ Automatically back up your project folder every day instead of typing the copy c
   - `#!/bin/bash` tells the system to use bash as the interpreter.
   - `cp -r` copies the project folder.
   - `$(date +%Y%m%d)` adds today’s date to the backup folder name.
-
+  - `echo` prints a message after the backup.
 - **Make the script executable:**
   ```bash
   chmod +x backup.sh
   ```
-
+  - **Syntax:**  
+    `chmod +x [script]`
+    - Adds execute permission so you can run the script.
 - **Run the script:**
   ```bash
   ./backup.sh
   ```
+  - **Syntax:**  
+    `./[script]`
+    - The `./` means “run from current directory.”
+
+*Simple use case:*  
+Easily automate backups, builds, or deployment tasks.
 
 ---
 
@@ -49,22 +58,28 @@ Automatically back up your project folder every day instead of typing the copy c
   NAME="World"
   echo "Hello, $NAME!"
   ```
-  *Simple use case:*  
-  Customize script output or logic.
+  - **Syntax:**  
+    `VARIABLE=value` assigns a value. Use `$VARIABLE` to reference it.
+  - **Simple use case:**  
+    Customize output or logic in scripts.
 
 - **Using arguments:**
   ```bash
   #!/bin/bash
   echo "First argument: $1"
   ```
-  Run it:
-  ```bash
-  ./myscript.sh test
-  ```
-  Output:
-  ```
-  First argument: test
-  ```
+  - **Syntax:**  
+    `$1` is the first argument, `$2` is the second, etc.
+  - Run it:
+    ```bash
+    ./myscript.sh test
+    ```
+    Output:
+    ```
+    First argument: test
+    ```
+  - **Simple use case:**  
+    Make scripts reusable for different files or folders by passing arguments.
 
 ---
 
@@ -76,8 +91,10 @@ Automatically back up your project folder every day instead of typing the copy c
     echo "Processing $file"
   done
   ```
-  *Simple use case:*  
-  Apply an action (like compression) to all `.txt` files in a folder.
+  - **Syntax:**  
+    `for [variable] in [list]; do ... done`
+  - **Simple use case:**  
+    Apply an action (like compression) to all `.txt` files in a folder.
 
 - **If statement:**
   ```bash
@@ -87,8 +104,11 @@ Automatically back up your project folder every day instead of typing the copy c
     echo "No config found."
   fi
   ```
-  *Simple use case:*  
-  Check if a config file exists before running a script.
+  - **Syntax:**  
+    `if [ condition ]; then ... else ... fi`
+    - `-f` checks if a file exists.
+  - **Simple use case:**  
+    Check if a config file exists before running a script.
 
 ---
 
@@ -98,12 +118,15 @@ Automatically back up your project folder every day instead of typing the copy c
   ```bash
   crontab -e
   ```
+  - Opens the cron table for your user.
 - **Run a script every day at 2am:**
   ```
   0 2 * * * /home/youruser/backup.sh
   ```
-  *Simple use case:*  
-  Automate daily backups, updates, or reports.
+  - **Syntax:**  
+    `minute hour day month day-of-week command`
+  - **Simple use case:**  
+    Automate daily backups, updates, or reports.
 
 ---
 
@@ -114,12 +137,13 @@ Automatically back up your project folder every day instead of typing the copy c
    #!/bin/bash
    find ~/logs -name "*.log" -mtime +7 -delete
    ```
+   - Finds and deletes `.log` files older than 7 days.
 2. Make it executable and run it:
    ```bash
    chmod +x cleanlogs.sh
    ./cleanlogs.sh
    ```
-3. Schedule it weekly in cron.
+3. Schedule it weekly in cron to keep your log directory tidy.
 
 ---
 
@@ -129,7 +153,8 @@ Automatically back up your project folder every day instead of typing the copy c
 - Use `chmod +x` to make scripts executable.
 - Test scripts manually before scheduling with cron.
 - Comment your scripts for future you (or teammates)!
+- Use variables and arguments for flexible, reusable scripts.
 
 ---
 
-**Next:** System security basics—user management, permissions, and best practices for keeping your system safe!
+**Next:** [9. System Security and User Management](./09-system-security-and-user-management.md)

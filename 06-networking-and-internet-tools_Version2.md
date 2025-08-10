@@ -6,89 +6,132 @@ Linux gives you powerful tools to check connectivity, transfer files, and troubl
 
 ## 6.1 Checking Network Connectivity
 
-- **Ping another machine or website:**
+- **Ping another machine or website**
   ```bash
   ping google.com
   ```
-  - Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to stop.
-  *Simple use case:*  
-  Check if your server can reach the internet or if a website is up.
+  - **Syntax:**  
+    `ping [hostname or IP]`  
+    Sends small packets to the target to check if it’s reachable and measures response time.  
+  - **Simple use case:**  
+    Check if your server can reach the internet or if a website is up.
 
-- **Test a specific number of packets:**
+- **Test a specific number of packets**
   ```bash
   ping -c 4 github.com
   ```
-  *Simple use case:*  
-  Quickly test if a host is reachable.
+  - **Syntax:**  
+    `ping -c [count] [hostname or IP]`  
+    The `-c` option limits the number of ping attempts.
+  - **Simple use case:**  
+    Quickly test if a host is reachable without endless output.
 
 ---
 
 ## 6.2 Downloading Files from the Internet
 
-- **Download a file with wget:**
+- **Download a file with wget**
   ```bash
   wget https://example.com/file.zip
   ```
-  *Simple use case:*  
-  Download a release or dataset directly to your server.
+  - **Syntax:**  
+    `wget [URL]`  
+    Downloads a file from the provided URL to your current directory.
+  - **Simple use case:**  
+    Download a release or dataset directly to your server.
 
-- **Download with curl:**
+- **Download with curl**
   ```bash
   curl -O https://example.com/file.zip
   ```
-  *Simple use case:*  
-  Curl is also used for API testing and automation.
+  - **Syntax:**  
+    `curl -O [URL]`  
+    The `-O` flag tells curl to save the file with its original name.
+  - **Simple use case:**  
+    Download files or test a direct download link.
 
 ---
 
 ## 6.3 Viewing Network Configuration
 
-- **Show IP addresses (modern method):**
+- **Show IP addresses (modern method)**
   ```bash
   ip addr
   ```
-- **Show older ifconfig output (if installed):**
+  - **Syntax:**  
+    `ip addr`  
+    Lists all network interfaces and their addresses.
+  - **Simple use case:**  
+    Find your server’s IP address.
+
+- **Show older ifconfig output (if installed)**
   ```bash
   ifconfig
   ```
-- **View routing table:**
+  - **Syntax:**  
+    `ifconfig`  
+    Shows similar information; may not be preinstalled on all systems.
+  - **Simple use case:**  
+    Legacy tool for quick interface info.
+
+- **View routing table**
   ```bash
   ip route
   ```
-
-*Simple use case:*  
-Find your server’s IP address or debug connectivity issues.
+  - **Syntax:**  
+    `ip route`  
+    Displays how network traffic is routed.
+  - **Simple use case:**  
+    Debug networking issues or find the default gateway.
 
 ---
 
 ## 6.4 Checking Open Ports and Services
 
-- **List open ports with netstat (if installed):**
+- **List open ports with netstat (if installed)**
   ```bash
   netstat -tuln
   ```
-- **Check open ports with ss (modern tool):**
+  - **Syntax:**  
+    `netstat -tuln`  
+    - `-t` TCP, `-u` UDP, `-l` listening, `-n` numeric addresses.
+  - **Simple use case:**  
+    See if your web server or database is listening on the right port.
+
+- **Check open ports with ss (modern tool)**
   ```bash
   ss -tuln
   ```
-  *Simple use case:*  
-  See if your web server or database is listening on the right port.
+  - **Syntax:**  
+    `ss -tuln`  
+    `ss` is a faster, modern replacement for `netstat`.
+  - **Simple use case:**  
+    Check which processes are using which ports.
 
 ---
 
 ## 6.5 Secure Remote Access with SSH
 
-- **Connect to a remote machine:**
+- **Connect to a remote machine**
   ```bash
   ssh user@host
   ```
-- **Copy files to/from remote machine:**
+  - **Syntax:**  
+    `ssh [user]@[hostname or IP]`
+    - `user` is your login on the remote machine.
+  - **Simple use case:**  
+    Deploy code, update configs, or transfer logs securely.
+
+- **Copy files to/from remote machine**
   ```bash
   scp file.txt user@host:/path/
   scp user@host:/path/file.txt .
   ```
-  *Simple use case:*  
-  Deploy code, update configs, or transfer logs securely.
+  - **Syntax:**  
+    `scp [source] [user@host:destination]`  
+    Copy files securely over SSH.
+  - **Simple use case:**  
+    Transfer files to and from servers without FTP.
 
 ---
 
@@ -122,4 +165,4 @@ Find your server’s IP address or debug connectivity issues.
 
 ---
 
-**Next:** Processes and system monitoring—track, manage, and optimize what runs on your system!
+**Next:** [7. Processes and System Monitoring](./07-processes-and-system-monitoring.md)

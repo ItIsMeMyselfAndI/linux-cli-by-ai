@@ -6,129 +6,192 @@ No matter how careful you are, problems will happen. Linux provides straightforw
 
 ## 10.1 Checking System Logs
 
-- **View recent system events:**
+- **View recent system events**
   ```bash
   less /var/log/syslog
   ```
-  *Simple use case:*  
-  Scan recent system messages for errors after a crash or failed service.
+  - **Syntax:**  
+    `less [filename]`
+    - Opens the file in a scrollable viewer. Use arrow keys to move, `q` to quit.
+  - **Simple use case:**  
+    Scan recent system messages for errors after a crash or failed service.
 
-- **View authentication and security logs:**
+- **View authentication and security logs**
   ```bash
   less /var/log/auth.log
   ```
-  *Simple use case:*  
-  Investigate failed login attempts or sudo misuse.
+  - **Syntax:**  
+    Same as above, but targets the authentication log.
+  - **Simple use case:**  
+    Investigate failed login attempts or sudo misuse.
 
-- **Follow a log in real time:**
+- **Follow a log in real time**
   ```bash
   tail -f /var/log/syslog
   ```
-  *Simple use case:*  
-  Watch what happens as you restart a service.
+  - **Syntax:**  
+    `tail -f [filename]`
+    - `-f` means “follow”—shows new lines as they’re written.
+  - **Simple use case:**  
+    Watch what happens as you restart a service or reproduce a bug.
 
 ---
 
 ## 10.2 Checking Disk and Memory Issues
 
-- **Check disk space:**
+- **Check disk space**
   ```bash
   df -h
   ```
-  *Simple use case:*  
-  Fix errors caused by a full disk.
+  - **Syntax:**  
+    `df -h`
+    - `-h` makes sizes “human-readable” (MB/GB).
+  - **Simple use case:**  
+    Fix errors caused by a full disk.
 
-- **Check RAM usage:**
+- **Check RAM usage**
   ```bash
   free -h
   ```
+  - **Syntax:**  
+    `free -h`
+    - Displays total, used, and free memory in human-readable format.
+  - **Simple use case:**  
+    See if your system is running low on memory.
 
-- **Find large files and folders:**
+- **Find large files and folders**
   ```bash
   du -h --max-depth=1 /
   ```
-  *Simple use case:*  
-  Track down what’s filling up your disk.
+  - **Syntax:**  
+    `du -h --max-depth=1 [directory]`
+    - `du` = disk usage, `-h` = human-readable, `--max-depth=1` = only the first level of folders.
+  - **Simple use case:**  
+    Track down what’s filling up your disk.
 
 ---
 
 ## 10.3 Restarting Services
 
-- **Restart a system service (systemd):**
+- **Restart a system service (systemd)**
   ```bash
   sudo systemctl restart servicename
   ```
-  *Simple use case:*  
-  Restart web servers (`apache2`, `nginx`), databases, or other services after changes.
+  - **Syntax:**  
+    `sudo systemctl restart [service]`
+    - Restarts the named service (like nginx, apache2, etc.)
+  - **Simple use case:**  
+    Restart web servers, databases, or other services after changes.
 
-- **Check if a service is running:**
+- **Check if a service is running**
   ```bash
   systemctl status servicename
   ```
+  - **Syntax:**  
+    `systemctl status [service]`
+    - Shows status, logs, and errors for the service.
+  - **Simple use case:**  
+    See why a service failed to start.
 
 ---
 
 ## 10.4 Killing Stuck or Zombie Processes
 
-- **List running processes:**
+- **List running processes**
   ```bash
   ps aux
   ```
-- **Find a process by name:**
+  - **Syntax:**  
+    `ps aux`
+    - Shows all running processes with details.
+  - **Simple use case:**  
+    Find the PID (process ID) of a stuck program.
+
+- **Find a process by name**
   ```bash
   pgrep -l processname
   ```
-- **Stop it safely:**
+  - **Syntax:**  
+    `pgrep -l [processname]`
+    - Lists PIDs and names for matching processes.
+  - **Simple use case:**  
+    Get the PID of a frozen app to kill it.
+
+- **Stop it safely**
   ```bash
   kill PID
   ```
-- **Force kill if necessary:**
+  - **Syntax:**  
+    `kill [PID]`
+    - Sends a TERM signal (asks the process to stop).
+  - **Simple use case:**  
+    Gracefully shut down a process.
+
+- **Force kill if necessary**
   ```bash
   kill -9 PID
   ```
-  *Simple use case:*  
-  End a frozen application or runaway script.
+  - **Syntax:**  
+    `kill -9 [PID]`
+    - Sends SIGKILL, which cannot be ignored.
+  - **Simple use case:**  
+    End a frozen application or runaway script.
 
 ---
 
 ## 10.5 Recovering Deleted Files
 
-- **Check the Trash (GUI):**  
-  If you used a file manager, check the trash folder.
+- **Check the Trash (GUI):**
+  - If you used a file manager, check the trash folder.
 
 - **For command line deletes (`rm`):**  
-  Recovery is hard! Try `testdisk` or backups:
-  ```bash
-  sudo apt install testdisk
-  sudo testdisk
-  ```
-  *Simple use case:*  
-  Attempt to recover accidentally deleted files on a disk.
+  - Recovery is difficult; try `testdisk` or backups:
+    ```bash
+    sudo apt install testdisk
+    sudo testdisk
+    ```
+    - **Syntax:**  
+      `sudo apt install [package]` to install, then run `testdisk`.
+    - **Simple use case:**  
+      Attempt to recover accidentally deleted files on a disk.
 
 ---
 
 ## 10.6 Fixing Broken Packages
 
-- **Repair package database:**
+- **Repair package database**
   ```bash
   sudo apt --fix-broken install
   ```
-  *Simple use case:*  
-  Resolve errors during package installation or upgrade.
+  - **Syntax:**  
+    `sudo apt --fix-broken install`
+    - Attempts to fix broken dependencies and incomplete installs.
+  - **Simple use case:**  
+    Resolve errors during package installation or upgrade.
 
 ---
 
 ## 10.7 Common Networking Fixes
 
-- **Restart networking:**
+- **Restart networking**
   ```bash
   sudo systemctl restart networking
   ```
-- **Release and renew IP (desktop):**
+  - **Syntax:**  
+    `sudo systemctl restart networking`
+    - Restarts the networking service.
+  - **Simple use case:**  
+    Fix network connection issues.
+
+- **Release and renew IP (desktop)**
   ```bash
   sudo dhclient -r
   sudo dhclient
   ```
+  - **Syntax:**  
+    `sudo dhclient -r` releases the address; `sudo dhclient` requests a new one.
+  - **Simple use case:**  
+    Get a new IP address if your network changes.
 
 ---
 
@@ -157,8 +220,10 @@ No matter how careful you are, problems will happen. Linux provides straightforw
 - Don’t panic if you delete something—stop using the disk and try recovery tools.
 - Make regular backups to avoid disaster.
 - Use `systemctl status` and logs to debug failing services.
+- Document fixes for future reference.
 
 ---
 
-**Congratulations!**  
-You’ve completed the basics of Linux CLI for developers. Keep this guide handy, and don’t be afraid to explore further—Linux rewards curiosity and practice!
+**Next:**  
+You’ve completed the basics!  
+Check the [./](./) directory for more resources, advanced guides, or revisit earlier lessons.

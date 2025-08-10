@@ -14,8 +14,10 @@ Learning to move around your system with the command line is the first step to b
     ```bash
     ssh youruser@yourserver.com
     ```
-- **Simple use case:**  
-  Open the terminal to run updates, edit files, or deploy code from anywhere.
+    - **Syntax:**  
+      `ssh username@hostname`
+    - **Simple use case:**  
+      Remotely manage a server or codebase from your own computer.
 
 ---
 
@@ -28,12 +30,11 @@ Learning to move around your system with the command line is the first step to b
   - `youruser` is your username.
   - `hostname` is your computer/server name.
   - `~/current/directory` shows your current location in the filesystem.
+- **Syntax:**  
+  The `$` indicates you’re a normal user (not root).
 
-**Syntax note:**  
-Anything you type after the `$` is a command.
-
-- **Simple use case:**  
-  If your prompt shows `~/projects/myapp`, you know you're inside your project folder.
+**Simple use case:**  
+If your prompt shows `~/projects/myapp`, you know you're inside your project folder.
 
 ---
 
@@ -43,7 +44,10 @@ Anything you type after the `$` is a command.
   ```bash
   pwd
   ```
-  (`pwd` = print working directory)
+  - **Syntax:**  
+    `pwd` stands for “print working directory”; no options needed.
+  - **Simple use case:**  
+    Find out exactly where you are in the filesystem.
 
 - **List files and folders:**
   ```bash
@@ -51,6 +55,12 @@ Anything you type after the `$` is a command.
   ls -l        # Detailed list with permissions, size, dates
   ls -a        # Show hidden files (starting with .)
   ```
+  - **Syntax:**  
+    `ls [options] [directory]`
+    - `-l` = long/detailed format
+    - `-a` = show all, including hidden files
+  - **Simple use case:**  
+    See what files and folders are in the current directory.
 
 - **Change directory:**
   ```bash
@@ -60,18 +70,13 @@ Anything you type after the `$` is a command.
   cd ~/Desktop # Go to your Desktop folder
   cd -         # Jump back to previous directory
   ```
-
-**Syntax note:**  
-- `cd` changes your current directory.
-- `..` means “parent directory.”
-- `~` means your home directory.
-
-- **Simple use case:**  
-  You want to edit a script on your Desktop:
-  ```bash
-  cd ~/Desktop
-  nano myscript.sh
-  ```
+  - **Syntax:**  
+    `cd [directory]`
+    - `..` = parent directory
+    - `~` = home directory
+    - `-` = previous directory
+  - **Simple use case:**  
+    Move between project folders, your home, or up and down the directory tree.
 
 ---
 
@@ -83,15 +88,11 @@ Anything you type after the `$` is a command.
 - `-` : previous directory
 
 - **Tab Completion:**  
-  Press <kbd>Tab</kbd> while typing a file or directory name to auto-complete it.  
-  Example:
-  ```
-  cd Doc<Tab>
-  ```
-  will auto-complete to `Documents` if that folder exists.
-
-- **Simple use case:**  
-  Quickly navigate or run scripts without typing full names.
+  Press <kbd>Tab</kbd> while typing a file or directory name to auto-complete it.
+  - **Syntax:**  
+    Start typing, then press <kbd>Tab</kbd> to fill in the rest.
+  - **Simple use case:**  
+    Quickly navigate or run scripts without typing full names.
 
 ---
 
@@ -102,8 +103,10 @@ Anything you type after the `$` is a command.
   sudo apt install tree   # Install tree if you don't have it
   tree .
   ```
-- **Simple use case:**  
-  Visualize the structure of your codebase or a project folder.
+  - **Syntax:**  
+    `tree [directory]`
+  - **Simple use case:**  
+    Visualize the structure of your codebase or a project folder.
 
 ---
 
@@ -113,13 +116,15 @@ Anything you type after the `$` is a command.
   ```
   command [options] [arguments]
   ```
-  - Example:
+  - **Example:**
     ```bash
     ls -lh /var/log
     ```
     - `ls` is the command (list directory)
     - `-lh` are the options (long format, human-readable sizes)
     - `/var/log` is the argument (directory to list)
+  - **Simple use case:**  
+    List log files with their sizes in a readable format.
 
 ---
 
@@ -141,4 +146,4 @@ Anything you type after the `$` is a command.
 
 ---
 
-**Next:** Working with files and directories—create, copy, move, delete, and edit using the CLI!
+**Next:** [3. Working with Files and Directories](./03-working-with-files-and-directories.md)
