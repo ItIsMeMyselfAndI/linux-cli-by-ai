@@ -142,3 +142,5 @@ A handy, at-a-glance summary of the most useful Linux command-line tools, syntax
 **Tip:** When stuck, try `man command` or `command --help` for built-in documentation!
 
 ---
+
+Check other [resources](./13-linux-cli-further-resources_Version2.md)

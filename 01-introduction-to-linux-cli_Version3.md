@@ -124,4 +124,4 @@ In the following chapters, you’ll learn:
 
 ---
 
-**Next:** [2. Getting Started: The Terminal and Basic Navigation](./02-getting-started-terminal-navigation.md)
+**Next:** [2. Getting Started: The Terminal and Basic Navigation](./02-getting-started-terminal-navigation_Version3.md)

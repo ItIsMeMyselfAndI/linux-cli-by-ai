@@ -131,3 +131,4 @@ Congratulations! You’ve covered the essentials of the Linux command line. This
 
 **Back to Start or Explore More:**  
 See the [./](./) directory for a complete list of chapters, advanced content, and downloadable resources.
+See the [cheetsheet](./12-linux-cli-cheat-sheet_Version2.md)

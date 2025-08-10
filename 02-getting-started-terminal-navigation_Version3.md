@@ -146,4 +146,4 @@ If your prompt shows `~/projects/myapp`, you know you're inside your project fol
 
 ---
 
-**Next:** [3. Working with Files and Directories](./03-working-with-files-and-directories.md)
+**Next:** [3. Working with Files and Directories](./03-working-with-files-and-directories_Version3.md)

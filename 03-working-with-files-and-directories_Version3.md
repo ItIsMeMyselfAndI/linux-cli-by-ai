@@ -217,4 +217,4 @@ Managing files and directories is at the heart of using the Linux command line. 
 
 ---
 
-**Next:** [4. Searching, Finding, and Managing Content](./04-searching-and-managing-content.md)
+**Next:** [4. Searching, Finding, and Managing Content](./04-searching-and-managing-content_Version3.md)

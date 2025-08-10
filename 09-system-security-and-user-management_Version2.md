@@ -206,4 +206,4 @@ Securing your Linux system and managing who can access and modify files is vital
 
 ---
 
-**Next:** [10. Troubleshooting and Recovery](./10-troubleshooting-and-recovery.md)
+**Next:** [10. Troubleshooting and Recovery](./10-troubleshooting-and-recovery_Version2.md)

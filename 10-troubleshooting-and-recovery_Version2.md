@@ -227,3 +227,4 @@ No matter how careful you are, problems will happen. Linux provides straightforw
 **Next:**  
 You’ve completed the basics!  
 Check the [./](./) directory for more resources, advanced guides, or revisit earlier lessons.
+Go to [advanced](./11-advanced-tips-and-next-steps_Version2.md) topics

@@ -153,4 +153,4 @@ Software on Linux is managed through package managers, which make it easy to ins
 
 ---
 
-**Next:** [6. Networking and Internet Utilities](./06-networking-and-internet-tools.md)
+**Next:** [6. Networking and Internet Utilities](./06-networking-and-internet-tools_Version2.md)

@@ -125,4 +125,4 @@ This outline covers essential and advanced Linux CLI usage with practical exampl
 
 ---
 
-**Ready? Start with: [1. Introduction to Linux and the Command Line](01-introduction-to-linux-cli.md)**
+**Ready? Start with: [1. Introduction to Linux and the Command Line](./01-introduction-to-linux-cli_Version3.md)**
